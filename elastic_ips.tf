@@ -5,7 +5,7 @@ resource "aws_eip" "nat_eip_01" {
   depends_on = [aws_internet_gateway.main]
 
   tags = {
-    Name = "EKS NAT Gateway 01 EIP"
+    Name      = "EKS NAT Gateway 01 EIP"
     terraform = "true"
   }
 }
@@ -14,7 +14,7 @@ resource "aws_eip" "nat_eip_02" {
   depends_on = [aws_internet_gateway.main]
 
   tags = {
-    Name = "EKS NAT Gateway 02 EIP"
+    Name      = "EKS NAT Gateway 02 EIP"
     terraform = "true"
   }
 }
