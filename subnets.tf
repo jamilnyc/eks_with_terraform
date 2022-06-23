@@ -14,7 +14,7 @@ resource "aws_subnet" "public_01" {
     Name = "EKS Public Subnet 01"
 
     # Allow cluster to discover this subnet
-    "kubernetes.io/cluster/eks" = "shared"
+    "kubernetes.io/cluster/MyAwesomeCluster" = "shared"
 
     # Allows public load balancer created by EKS to be placed in this subnet
     "kubernetes.io/role/elb" = 1
@@ -30,7 +30,7 @@ resource "aws_subnet" "public_02" {
 
   tags = {
     Name                        = "EKS Public Subnet 02"
-    "kubernetes.io/cluster/eks" = "shared"
+    "kubernetes.io/cluster/MyAwesomeCluster" = "shared"
     "kubernetes.io/role/elb"    = 1
     terraform                   = "true"
   }
@@ -43,7 +43,7 @@ resource "aws_subnet" "private_01" {
 
   tags = {
     Name                        = "EKS Private Subnet 01"
-    "kubernetes.io/cluster/eks" = "shared"
+    "kubernetes.io/cluster/MyAwesomeCluster" = "shared"
 
     # Deploy private load balancer
     "kubernetes.io/role/internal-elb" = 1
@@ -58,7 +58,7 @@ resource "aws_subnet" "private_02" {
 
   tags = {
     Name                              = "EKS Private Subnet 02"
-    "kubernetes.io/cluster/eks"       = "shared"
+    "kubernetes.io/cluster/MyAwesomeCluster"       = "shared"
     "kubernetes.io/role/internal-elb" = 1
     terraform                         = "true"
   }
