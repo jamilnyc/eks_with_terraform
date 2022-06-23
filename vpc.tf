@@ -10,7 +10,7 @@ resource "aws_vpc" "main" {
   assign_generated_ipv6_cidr_block = false
 
   tags = {
-    Name = "EKS VPC"
+    Name      = "EKS VPC"
     terraform = "true"
   }
 }
