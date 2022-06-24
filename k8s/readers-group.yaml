@@ -1,0 +1,23 @@
+---
+# Example of how to create a cluster role and group
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: reader-role
+rules:
+  - apiGroups: ["*"]
+    resources: ["deployments", "configmaps", "pods", "secrets", "services"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: reader
+roleRef:
+  kind: ClusterRole
+  name: reader-role
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - kind: Group
+    name: readers
+    apiGroup: rbac.authorization.k8s.io
